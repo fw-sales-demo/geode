@@ -4,6 +4,7 @@ metadata:
   name: busybox
   labels:
     app: busybox
+    team: busy-team
 spec:
   replicas: 1
   selector:
