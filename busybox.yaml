@@ -6,6 +6,7 @@ metadata:
     app: payments
     cost-center: e-commerce
     team: shopping-cart
+    owner: jp@example.com
 spec:
   replicas: 3
   selector:
@@ -18,7 +19,7 @@ spec:
     spec:
       containers:
         - name: busybox
-          image: busybox:latest
+          image: busybox:1.36.1
           resources:
             requests:
               memory: "64Mi"
