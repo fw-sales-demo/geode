@@ -6,7 +6,7 @@ metadata:
     app: search
     cost-center: e-commerce
     team: shopping-cart-team
-    owners: jp@acme.com
+    owner: jp@acme.com
 spec:
   replicas: 3
   selector:
