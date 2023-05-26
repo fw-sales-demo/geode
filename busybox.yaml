@@ -1,8 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox
+  name: api
   labels:
+    app: api
     cost-center: e-commerce
     team: shopping-cart
 spec:
