@@ -1,0 +1,11 @@
+options:
+  organization: centaurus
+  setExitCode: false
+
+manifests:
+  yaml:
+    - ./busybox.yaml
+    - ./nginx.yaml
+
+exemptions:
+ - checks: [image_vulnerability, unscanned_images, topologySpreadConstraint]
