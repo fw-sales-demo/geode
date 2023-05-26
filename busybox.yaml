@@ -4,7 +4,7 @@ metadata:
   name: busybox
   labels:
     cost-center: e-commerce
-    team: shopping-cart
+    team: shopping-cart-team
 spec:
   replicas: 1
   selector:
