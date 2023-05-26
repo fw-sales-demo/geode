@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   labels:
-    app: nginx
+    app: search
+    cost-center: e-commerce
+    team: shopping-cart-team
 spec:
   replicas: 3
   selector:
