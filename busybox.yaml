@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   name: busybox
   labels:
-    app: busybox
+    cost-center: e-commerce
+    team: shopping-cart
 spec:
   replicas: 1
   selector:
