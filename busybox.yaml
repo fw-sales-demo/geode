@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: busybox
   labels:
+    app: api-server
     cost-center: e-commerce
     team: shopping-cart
 spec:
