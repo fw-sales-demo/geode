@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: busybox
   labels:
-    app: payments
+    app: api
     cost-center: e-commerce
     team: shopping-cart
 spec:
@@ -19,13 +19,6 @@ spec:
       containers:
       - name: busybox
         image: busybox:latest
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"        
         ports:
         - containerPort: 80
         securityContext:
