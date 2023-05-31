@@ -7,7 +7,7 @@ metadata:
     cost-center: e-commerce
     team: shopping-cart
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: busybox
@@ -17,22 +17,39 @@ spec:
         app: busybox
     spec:
       containers:
-      - name: busybox
-        image: busybox:latest
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"        
-        ports:
-        - containerPort: 80
-        securityContext:
-          allowPrivilegeEscalation: true
-          privileged: true
-          readOnlyRootFilesystem: true
-          runAsNonRoot: false
-          capabilities:
-            add:
-              - ALL
+        - name: busybox
+          image: busybox:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
+          readinessProbe:
+            # TODO: Change the readinessProbe setting to reflect your application's readiness to serve traffic
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          imagePullPolicy: Always
+          livenessProbe:
+            # TODO: Change the livenessProbe setting to reflect your application's health
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 5
