@@ -6,6 +6,7 @@ metadata:
     cost-center: e-commerce
     team: shopping-cart
     owner: jp@example.com
+    app: my-favorite-app
 spec:
   replicas: 3
   selector:
