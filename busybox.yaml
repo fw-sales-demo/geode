@@ -1,52 +1,43 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox
+  name: nginx-deployment
   labels:
     cost-center: e-commerce
-    team: shopping-cart
-    owner: jp@example.com
+    team: shopping-cart-team
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: busybox
+      app: nginx
   template:
     metadata:
       labels:
-        app: busybox
+        app: nginx
     spec:
       containers:
-        - name: busybox
-          image: busybox:1.36.1
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+        - name: nginx
+          image: nginx:1.18-alpine
           ports:
             - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1G
           securityContext:
             allowPrivilegeEscalation: false
             privileged: false
             readOnlyRootFilesystem: true
-            runAsNonRoot: true
+            runAsNonRoot: false
             capabilities:
               drop:
                 - ALL
           imagePullPolicy: Always
-          livenessProbe:
-            # TODO: Change the livenessProbe setting to reflect your application's health
-            exec:
-              command:
-                - cat
-                - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          readinessProbe:
-            # TODO: Change the readinessProbe setting to reflect your application's readiness to serve traffic
-            exec:
-              command:
-                - cat
-                - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
