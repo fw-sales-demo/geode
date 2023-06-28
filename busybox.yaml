@@ -5,7 +5,6 @@ metadata:
   labels:
     cost-center: e-commerce
     team: shopping-cart
-    owner: jp@example.com
 spec:
   replicas: 3
   selector:
