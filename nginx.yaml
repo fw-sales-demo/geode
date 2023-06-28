@@ -5,8 +5,6 @@ metadata:
   labels:
     app: search
     cost-center: e-commerce
-    team: shopping-cart-team
-    owner: jp@acme.com
 spec:
   replicas: 3
   selector:
@@ -31,14 +29,11 @@ spec:
               path: /health
               port: http
           resources:
-            requests:
-              cpu: 1000m
-              memory: 1G
             limits:
               cpu: 1000m
               memory: 1G
           securityContext:
-            allowPrivilegeEscalation: true
+            allowPrivilegeEscalation: false
             privileged: false
             readOnlyRootFilesystem: true
             runAsNonRoot: true
