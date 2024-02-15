@@ -6,4 +6,5 @@ manifests:
   yaml:
     - ./busybox.yaml
     - ./nginx.yaml
+    - ./custom
 
