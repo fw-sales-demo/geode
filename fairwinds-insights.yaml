@@ -7,6 +7,7 @@ manifests:
     - ./busybox.yaml
     - ./nginx.yaml
     - ./custom_check.tf
+    - ./create_instance.tf
 
 terraform:
   paths:
