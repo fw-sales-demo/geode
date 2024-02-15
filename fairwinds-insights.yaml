@@ -7,4 +7,8 @@ manifests:
     - ./busybox.yaml
     - ./nginx.yaml
     - ./custom
+    - /app/repository/geode
 
+tfsec:
+    enabled: true
+    customChecksDirectory: /app/repository/geode/checks
