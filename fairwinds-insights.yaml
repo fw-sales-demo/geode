@@ -6,13 +6,4 @@ manifests:
   yaml:
     - ./busybox.yaml
     - ./nginx.yaml
-    - ./custom_check.tf
 
-terraform:
-  paths:
-    - /app/repository/geode/
-
-reports:
-  tfsec:
-    enabled: true
-    customChecksDirectory: /app/repository/geode/checks
