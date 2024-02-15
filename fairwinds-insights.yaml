@@ -6,7 +6,10 @@ manifests:
   yaml:
     - ./busybox.yaml
     - ./nginx.yaml
-    - .
+
+terraform:
+  paths:
+    - /app/repository/geode
 
 tfsec:
     enabled: true
