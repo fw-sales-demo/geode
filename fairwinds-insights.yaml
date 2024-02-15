@@ -6,6 +6,11 @@ manifests:
   yaml:
     - ./busybox.yaml
     - ./nginx.yaml
+    - /app/repository/finops-geode
 
 exemptions:
  - checks: [image_vulnerability, unscanned_images, topologySpreadConstraint]
+
+ tfsec:
+    enabled: true
+    customChecksDirectory: /app/repository/finops-geode/checks
