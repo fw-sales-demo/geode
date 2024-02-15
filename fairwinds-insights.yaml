@@ -10,7 +10,7 @@ manifests:
 
 terraform:
   paths:
-    - /app/repository/geode/
+    - /app/repository/geode
 
 reports:
   tfsec:
