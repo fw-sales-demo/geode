@@ -12,6 +12,7 @@ terraform:
   paths:
     - /app/repository/geode/
 
-tfsec:
-  enabled: true
-  customChecksDirectory: /app/repository/geode/checks
+reports:
+  tfsec:
+    enabled: true
+    customChecksDirectory: /app/repository/geode/checks
