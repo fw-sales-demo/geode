@@ -6,7 +6,6 @@ manifests:
   yaml:
     - ./busybox.yaml
     - ./nginx.yaml
-    - ./custom
     - /app/repository/geode
 
 tfsec:
