@@ -6,10 +6,11 @@ manifests:
   yaml:
     - ./busybox.yaml
     - ./nginx.yaml
+    - ./custom_check.tf
 
 terraform:
   paths:
-    - /app/repository/geode
+    - /app/repository/geode/
 
 tfsec:
     enabled: true
